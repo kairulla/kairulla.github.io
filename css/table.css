@@ -8,3 +8,14 @@ table {
 td {
     border: 0.5px solid rgb(0, 0, 0);    
 }
+
+iframe {
+    border-top-width: 0px;
+    border-top-style: solid;
+    border-bottom-width: 0px;
+    border-bottom-style: solid;
+    border-left-width: 0px;
+    border-left-style: solid;
+    border-right-width: 0px;
+    border-right-style: solid;
+}

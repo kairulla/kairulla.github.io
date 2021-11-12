@@ -1,0 +1,10 @@
+table {
+    border: 0.5px solid rgb(0, 0, 0);
+    padding: 0px; /* рамка */
+    margin: 0 auto; /* отступ от границ браузера */
+    border-spacing: 0px 0px;
+}
+
+td {
+    border: 0.5px solid rgb(0, 0, 0);    
+}

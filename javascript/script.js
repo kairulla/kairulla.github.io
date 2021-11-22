@@ -1,4 +1,4 @@
-setInterval(function() {
+setInterval(function () {
     // Load the date here every second
     document.getElementById("demo").innerHTML = new Date()
 }, 1000)
@@ -11,6 +11,13 @@ function displayDate() {
     }
 }
 
+function activeLight() {
+    if (document.getElementById("light1").getAttribute("src") == "pictures/light_off.png") {
+        document.getElementById("light1").setAttribute("src", "pictures/light_on.png");
+    } else {
+        document.getElementById("light1").setAttribute("src", "pictures/light_off.png");
+    }
+}
 
 
 // alert("Добро пожаловать на мой сайт! Спасибо что зашли.");

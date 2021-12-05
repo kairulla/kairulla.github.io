@@ -19,3 +19,7 @@ iframe {
     border-right-width: 0px;
     border-right-style: solid;
 }
+
+#password1, #button_input, #button_registration {
+    margin-left: 20px;
+}

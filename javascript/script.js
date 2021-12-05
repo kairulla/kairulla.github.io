@@ -3,10 +3,10 @@ setInterval(function () {
 }, 1000)
 
 function displayDate() {
-    if (document.getElementById("button1").innerHTML === "Узнать дату") {
-        document.getElementById("button1").innerHTML = Date();
+    if (document.getElementById("button_date").innerHTML === "Узнать дату") {
+        document.getElementById("button_date").innerHTML = Date();
     } else {
-        document.getElementById("button1").innerHTML = "Узнать дату"
+        document.getElementById("button_date").innerHTML = "Узнать дату"
     }
 }
 
@@ -32,17 +32,49 @@ function cursorPoint(element1) {
         }
     } catch (err1) {
         for (let i = 1; i <= 20; i++) {
-            document.getElementById("c" + i).removeAttribute("style");
-            document.getElementById("c" + i + "-" + i).removeAttribute("style");
+            if (document.getElementById("c" + i).getAttribute("style") == null) {
+                continue;
+            } else {
+                document.getElementById("c" + i).removeAttribute("style");
+                document.getElementById("c" + i + "-" + i).removeAttribute("style");
+            }
         }
     }
 }
 
+var user_array = ["admin"];
+var pass_array = ["admin"];
 
+function registration1() {
+    let user = document.getElementById("login1").value;
+    let pass = document.getElementById("password1").value;
 
+    user_array.push(user);
+    pass_array.push(pass);
+}
 
+function input1() {
+    let user = document.getElementById("login1").value;
+    let pass = document.getElementById("password1").value;
 
-
+    if (document.getElementById("button_input").getAttribute("value") == "Вход") {
+        for (let i = 0; i < user_array.length; i++) {
+            if (user == user_array[i] && pass == pass_array[i]) {
+                document.getElementById("login1").setAttribute("type", "hidden");
+                document.getElementById("password1").setAttribute("type", "hidden");
+                document.getElementById("button_input").setAttribute("value", "Выход");
+                document.getElementById("button_registration").setAttribute("type", "hidden");
+            } else {
+                continue;
+            }
+        }
+    } else {
+        document.getElementById("login1").setAttribute("type", "text");
+        document.getElementById("password1").setAttribute("type", "password");
+        document.getElementById("button_input").setAttribute("value", "Вход");
+        document.getElementById("button_registration").setAttribute("type", "button");
+    }
+}
 
 
 

@@ -45,12 +45,31 @@ function cursorPoint(element1) {
 var user_array = ["admin"];
 var pass_array = ["admin"];
 
-function registration1() {
+function proverka_polzovatelya() {
+    var counter1 = 0;
     let user = document.getElementById("login1").value;
     let pass = document.getElementById("password1").value;
 
-    user_array.push(user);
-    pass_array.push(pass);
+    for (let i = 0; i < user_array.length; i++) {
+        if (user_array[i] == user) {
+            counter1++;
+        } else {
+            continue;
+        }
+    }
+    return (counter1);
+}
+
+function registration1() {
+    if (proverka_polzovatelya() == 0) {
+        let user = document.getElementById("login1").value;
+        let pass = document.getElementById("password1").value;
+
+        user_array.push(user);
+        pass_array.push(pass);
+    } else {
+        alert("Такой пользователь уже существует!");
+    }
 }
 
 function input1() {

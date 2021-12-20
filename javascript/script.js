@@ -46,7 +46,7 @@ var user_array = ["admin"];
 var pass_array = ["admin"];
 
 function proverka_polzovatelya() {
-    var counter1 = 0;
+    var counter1 = 0; 
     let user = document.getElementById("login1").value;
     let pass = document.getElementById("password1").value;
 
@@ -61,14 +61,18 @@ function proverka_polzovatelya() {
 }
 
 function registration1() {
-    if (proverka_polzovatelya() == 0) {
+    if (proverka_polzovatelya() == 0 && document.getElementById("login1").value != '') {
         let user = document.getElementById("login1").value;
         let pass = document.getElementById("password1").value;
 
         user_array.push(user);
         pass_array.push(pass);
     } else {
-        alert("Такой пользователь уже существует!");
+        if (document.getElementById("login1").value == '') {
+            alert("Ошибка ввода!!!");
+        } else {
+            alert("Такой пользователь уже существует!");
+        }
     }
 }
 
